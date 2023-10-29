@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:16.0-alpine3.18
+    environment:
+      POSTGRES_PASSWORD: "Postgres2023!"
+      POSTGRES_DB: Audote
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/tables.sql:/docker-entrypoint-initdb.d/tables.sql
+    networks:
+      - compose-network
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - compose-network
+
+networks: 
+  compose-network:
+    driver: bridge
