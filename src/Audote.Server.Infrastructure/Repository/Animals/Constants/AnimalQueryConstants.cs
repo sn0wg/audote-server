@@ -10,6 +10,23 @@
             /**where**/
         ";
 
+        internal const string PAGINATED_QUERY = @"
+            SELECT
+                a.*,
+                p.*
+            FROM Animal a LEFT JOIN Picture p ON a.id = p.animalId
+            /**where**/
+            /**orderby**/
+            LIMIT @Limit OFFSET @Offset
+        ";
+
+        internal const string COUNT_QUERY = @"
+            SELECT
+                count(1)
+            FROM Animal a
+            /**where**/
+        ";
+
         internal const string INSERT_QUERY = @"
             INSERT INTO Animal (Name, Age, Kind, Gender, Active, Description, City, State) 
             VALUES (@Name, @Age, @Kind, @Gender, @Active, @Description, @City, @State)";
@@ -42,5 +59,7 @@
         internal const string DESCRIPTION_SET_FIELD = "Description = @Description";
         internal const string CITY_SET_FIELD = "City = @City";
         internal const string STATE_SET_FIELD = "State = @State";
+
+        internal const string ORDER_BY_ID_ASC = "a.Id ASC";
     }
 }

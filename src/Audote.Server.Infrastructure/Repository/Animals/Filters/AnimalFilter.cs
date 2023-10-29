@@ -11,5 +11,7 @@ namespace Audote.Server.Infrastructure.Repository.Animals.Filters
         public Gender[] Genders { get; set; } = Array.Empty<Gender>();
         public string City { get; set; } = string.Empty;
         public string State { get; set; } = string.Empty;
+        public int Page { get; set; }
+        public int PageSize { get; set; }
     }
 }

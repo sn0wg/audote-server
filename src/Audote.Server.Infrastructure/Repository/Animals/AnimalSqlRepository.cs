@@ -28,7 +28,7 @@ namespace Audote.Server.Infrastructure.Repository.Animals
             return await connection.ExecuteAsync(query.RawSql, query.Parameters);
         }
 
-        public async Task<Animal[]> Get(AnimalFilter animalFilter, CancellationToken cancellationToken)
+        public async Task<Paged<Animal[]>> Get(AnimalFilter animalFilter, CancellationToken cancellationToken)
         {
             using var connection = new NpgsqlConnection(_connectionString);
 
@@ -55,7 +55,13 @@ namespace Audote.Server.Infrastructure.Repository.Animals
             if (!string.IsNullOrEmpty(animalFilter.State))
                 builder = builder.Where(AnimalQueryConstants.STATE_EQ_FILTER, new { animalFilter.State });
 
-            var selector = builder.AddTemplate(AnimalQueryConstants.SELECT_QUERY);
+            var selectBuilder = builder.AddParameters(new {
+                Limit = animalFilter.PageSize,
+                Offset = animalFilter.PageSize * animalFilter.Page
+            }).OrderBy(AnimalQueryConstants.ORDER_BY_ID_ASC);
+
+            var selector = selectBuilder.AddTemplate(AnimalQueryConstants.PAGINATED_QUERY);
+            var counter = builder.AddTemplate(AnimalQueryConstants.COUNT_QUERY);
 
             var dataDictionary = new Dictionary<int, Animal>();
 
@@ -72,7 +78,13 @@ namespace Audote.Server.Infrastructure.Repository.Animals
                 return item;
             }, selector.Parameters);
 
-            return dataDictionary.Values.ToArray();
+            var count = connection.QuerySingle<int>(counter.RawSql, counter.Parameters);
+
+            return new Paged<Animal[]>
+            {
+                Data = dataDictionary.Values.ToArray(),
+                PageInfo = new PageInfo(count, animalFilter.PageSize, animalFilter.Page)
+            };
         }
 
         public async Task<Animal?> GetById(int animalId, CancellationToken cancellationToken)

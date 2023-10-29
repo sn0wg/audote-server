@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Audote.Server.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Audote.Server.Application", "src\Audote.Server.Application\Audote.Server.Application.csproj", "{0B4EC03C-F991-441A-A2CC-885FCE591117}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Audote.Server.WebApi", "src\Audote.Server.WebApi\Audote.Server.WebApi.csproj", "{25381ACE-13C1-458C-A590-E309CF5BB86C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Audote.Server.Web", "src\Audote.Server.Web\Audote.Server.Web.csproj", "{A017ADA7-5E87-499D-B4FE-0BD29C3033FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Audote.Server.Web", "src\Audote.Server.Web\Audote.Server.Web.csproj", "{A017ADA7-5E87-499D-B4FE-0BD29C3033FE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{45B123F4-64EB-4178-945C-E29779AD2643}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+		data\tables.sql = data\tables.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +37,6 @@ Global
 		{0B4EC03C-F991-441A-A2CC-885FCE591117}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B4EC03C-F991-441A-A2CC-885FCE591117}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B4EC03C-F991-441A-A2CC-885FCE591117}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25381ACE-13C1-458C-A590-E309CF5BB86C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25381ACE-13C1-458C-A590-E309CF5BB86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25381ACE-13C1-458C-A590-E309CF5BB86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25381ACE-13C1-458C-A590-E309CF5BB86C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A017ADA7-5E87-499D-B4FE-0BD29C3033FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A017ADA7-5E87-499D-B4FE-0BD29C3033FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A017ADA7-5E87-499D-B4FE-0BD29C3033FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,7 +49,6 @@ Global
 		{D74A683B-21BC-466E-B9F8-2FB3CECB5B6E} = {50338E08-B350-41EF-A389-21721896EBE4}
 		{A58096CC-E7F7-43C6-8927-1209244C12B2} = {50338E08-B350-41EF-A389-21721896EBE4}
 		{0B4EC03C-F991-441A-A2CC-885FCE591117} = {50338E08-B350-41EF-A389-21721896EBE4}
-		{25381ACE-13C1-458C-A590-E309CF5BB86C} = {50338E08-B350-41EF-A389-21721896EBE4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AECC04C8-2050-461B-A157-91D69C72A30C}
