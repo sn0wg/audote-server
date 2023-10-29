@@ -1,4 +1,0 @@
-# For more info on HTTP files go to https://aka.ms/vs/httpfile
-@hostname=localhost
-@port=5201
-GET http://{{hostname}}:{{port}}/animal/1

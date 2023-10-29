@@ -65,7 +65,9 @@ namespace Audote.Server.Infrastructure.Repository.Animals
                     dataDictionary.Add(animal.Id, animal);
 
                 var item = dataDictionary[animal.Id];
-                item.Pictures.Add(picture);
+
+                if (picture != null)
+                    item.Pictures.Add(picture);
 
                 return item;
             }, selector.Parameters);
@@ -88,7 +90,8 @@ namespace Audote.Server.Infrastructure.Repository.Animals
             {
                 entity ??= animal;
 
-                entity.Pictures.Add(picture);
+                if (picture != null)
+                    entity.Pictures.Add(picture);
 
                 return animal;
             }, selector.Parameters);
