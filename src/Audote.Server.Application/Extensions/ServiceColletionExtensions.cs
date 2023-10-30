@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Audote.Server.Application.Extensions
 {
@@ -10,6 +12,9 @@ namespace Audote.Server.Application.Extensions
             {
                 cfg.RegisterServicesFromAssembly(typeof(ServiceColletionExtensions).Assembly);
             });
+
+            services.AddValidatorsFromAssembly(typeof(ServiceColletionExtensions).Assembly);
+
             return services;
         }
     }

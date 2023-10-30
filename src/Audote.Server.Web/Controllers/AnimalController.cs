@@ -27,7 +27,9 @@ namespace Audote.Server.Web.Controllers
         {
             var result = await _mediator.Send(command, cancellationToken);
 
-            return TypedResults.Ok(result);
+            return result.Match<IResult>(
+                sucess => TypedResults.Ok(sucess), 
+                err => TypedResults.BadRequest(err));
         }
 
         [HttpGet("{id}")]
