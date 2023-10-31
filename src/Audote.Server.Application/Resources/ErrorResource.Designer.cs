@@ -61,6 +61,33 @@ namespace Audote.Server.Application.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a City lenght should be less than 255 and greater than 0.
+        /// </summary>
+        public static string INVALID_CITY {
+            get {
+                return ResourceManager.GetString("INVALID_CITY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Max Age should be greater than 0.
+        /// </summary>
+        public static string INVALID_MAX_AGE {
+            get {
+                return ResourceManager.GetString("INVALID_MAX_AGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Min Age should be greater than 0.
+        /// </summary>
+        public static string INVALID_MIN_AGE {
+            get {
+                return ResourceManager.GetString("INVALID_MIN_AGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Page should sent and be greater than or equal to zero.
         /// </summary>
         public static string INVALID_PAGE {
@@ -75,6 +102,15 @@ namespace Audote.Server.Application.Resources {
         public static string INVALID_PAGE_SIZE {
             get {
                 return ResourceManager.GetString("INVALID_PAGE_SIZE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a State lenght should be 2.
+        /// </summary>
+        public static string INVALID_STATE {
+            get {
+                return ResourceManager.GetString("INVALID_STATE", resourceCulture);
             }
         }
     }
