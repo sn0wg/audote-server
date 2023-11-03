@@ -29,7 +29,8 @@
 
         internal const string INSERT_QUERY = @"
             INSERT INTO Animal (Name, Age, Kind, Gender, Active, Description, City, State) 
-            VALUES (@Name, @Age, @Kind, @Gender, @Active, @Description, @City, @State)";
+            VALUES (@Name, @Age, @Kind, @Gender, @Active, @Description, @City, @State)
+            RETURNING Id";
 
         internal const string UPDATE_QUERY = @"
             UPDATE Animal

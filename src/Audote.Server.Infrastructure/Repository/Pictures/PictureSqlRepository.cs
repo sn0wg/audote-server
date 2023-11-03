@@ -42,7 +42,7 @@ namespace Audote.Server.Infrastructure.Repository.Pictures
         {
             using var connection = new NpgsqlConnection(_connectionString);
 
-            return await connection.ExecuteAsync(PictureQueryConstants.INSERT_QUERY,
+            return await connection.ExecuteScalarAsync<int>(PictureQueryConstants.INSERT_QUERY,
                 new
                 {
                     picture.Description,

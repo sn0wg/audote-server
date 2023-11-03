@@ -115,7 +115,7 @@ namespace Audote.Server.Infrastructure.Repository.Animals
         {
             using var connection = new NpgsqlConnection(_connectionString);
 
-            return await connection.ExecuteAsync(AnimalQueryConstants.INSERT_QUERY,
+            return await connection.ExecuteScalarAsync<int>(AnimalQueryConstants.INSERT_QUERY,
                 new
                 {
                     animal.Name,
@@ -145,7 +145,9 @@ namespace Audote.Server.Infrastructure.Repository.Animals
                 .Set(AnimalQueryConstants.STATE_SET_FIELD, new { animal.State })
                 .AddTemplate(AnimalQueryConstants.UPDATE_QUERY);
 
-            return await connection.ExecuteAsync(query.RawSql, query.Parameters);
+            var result = await connection.ExecuteAsync(query.RawSql, query.Parameters);
+
+            return result;
         }
     }
 }

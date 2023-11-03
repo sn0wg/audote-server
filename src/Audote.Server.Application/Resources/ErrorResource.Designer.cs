@@ -61,6 +61,15 @@ namespace Audote.Server.Application.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Age should be greater than 0.
+        /// </summary>
+        public static string INVALID_AGE {
+            get {
+                return ResourceManager.GetString("INVALID_AGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a City lenght should be less than 255 and greater than 0.
         /// </summary>
         public static string INVALID_CITY {

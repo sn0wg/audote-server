@@ -20,8 +20,8 @@ namespace Audote.Server.Application.Animals.Validators
 
             RuleFor(x => x.Age)
                 .GreaterThan(0)
-                .WithErrorCode(nameof(ErrorResource.INVALID_MIN_AGE))
-                .WithMessage(ErrorResource.INVALID_MIN_AGE);
+                .WithErrorCode(nameof(ErrorResource.INVALID_AGE))
+                .WithMessage(ErrorResource.INVALID_AGE);
 
             RuleFor(x => x.State)
                 .Length(2, 2)

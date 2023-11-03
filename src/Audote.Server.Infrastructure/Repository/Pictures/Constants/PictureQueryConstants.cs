@@ -12,6 +12,7 @@
         internal const string INSERT_QUERY = @"
             INSERT INTO Picture (Description, Path, ContentType, AnimalId) 
             VALUES (@Description, @Path, @ContentType, @AnimalId)
+            RETURNING Id
         ";
         internal const string DELETE_QUERY = @"
             DELETE FROM Picture
