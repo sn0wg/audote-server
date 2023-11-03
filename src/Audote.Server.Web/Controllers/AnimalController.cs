@@ -19,7 +19,9 @@ namespace Audote.Server.Web.Controllers
         public async Task<IResult> Create([FromBody] CreateAnimalCommand animalCommand, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(animalCommand, cancellationToken);
-            return TypedResults.Created($"{result}");
+            return result.Match<IResult>(
+                sucess => TypedResults.Created($"{result}"),
+                err => TypedResults.BadRequest(err));
         }
 
         [HttpGet]

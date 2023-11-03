@@ -1,9 +1,11 @@
-﻿using Audote.Server.Domain.Enums;
+﻿using Audote.Server.Domain.Entities;
+using Audote.Server.Domain.Enums;
 using MediatR;
+using OneOf;
 
 namespace Audote.Server.Application.Animals.Commands
 {
-    public class UpdateAnimalCommand : IRequest<bool>
+    public class UpdateAnimalCommand : IRequest<OneOf<bool, Error>>
     {
         public int Id { get; set; }
         public string Name { get; set; }

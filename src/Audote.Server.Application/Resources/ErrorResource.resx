@@ -120,11 +120,20 @@
   <data name="INVALID_CITY" xml:space="preserve">
     <value>City lenght should be less than 255 and greater than 0</value>
   </data>
+  <data name="INVALID_CONTENT_TYPE" xml:space="preserve">
+    <value>Content type should be provided</value>
+  </data>
+  <data name="INVALID_DESCRIPTION" xml:space="preserve">
+    <value>Description should be informed</value>
+  </data>
   <data name="INVALID_MAX_AGE" xml:space="preserve">
     <value>Max Age should be greater than 0</value>
   </data>
   <data name="INVALID_MIN_AGE" xml:space="preserve">
     <value>Min Age should be greater than 0</value>
+  </data>
+  <data name="INVALID_NAME" xml:space="preserve">
+    <value>Name lenght should be greater than 0 and less than 255</value>
   </data>
   <data name="INVALID_PAGE" xml:space="preserve">
     <value>Page should sent and be greater than or equal to zero</value>
@@ -134,5 +143,8 @@
   </data>
   <data name="INVALID_STATE" xml:space="preserve">
     <value>State lenght should be 2</value>
+  </data>
+  <data name="INVALID_STREAM" xml:space="preserve">
+    <value>Picture should be provided</value>
   </data>
 </root>

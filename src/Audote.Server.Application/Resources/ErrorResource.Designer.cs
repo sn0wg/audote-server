@@ -70,6 +70,24 @@ namespace Audote.Server.Application.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Content type should be provided.
+        /// </summary>
+        public static string INVALID_CONTENT_TYPE {
+            get {
+                return ResourceManager.GetString("INVALID_CONTENT_TYPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Description should be informed.
+        /// </summary>
+        public static string INVALID_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("INVALID_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Max Age should be greater than 0.
         /// </summary>
         public static string INVALID_MAX_AGE {
@@ -84,6 +102,15 @@ namespace Audote.Server.Application.Resources {
         public static string INVALID_MIN_AGE {
             get {
                 return ResourceManager.GetString("INVALID_MIN_AGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Name lenght should be greater than 0 and less than 255.
+        /// </summary>
+        public static string INVALID_NAME {
+            get {
+                return ResourceManager.GetString("INVALID_NAME", resourceCulture);
             }
         }
         
@@ -111,6 +138,15 @@ namespace Audote.Server.Application.Resources {
         public static string INVALID_STATE {
             get {
                 return ResourceManager.GetString("INVALID_STATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Picture should be provided.
+        /// </summary>
+        public static string INVALID_STREAM {
+            get {
+                return ResourceManager.GetString("INVALID_STREAM", resourceCulture);
             }
         }
     }

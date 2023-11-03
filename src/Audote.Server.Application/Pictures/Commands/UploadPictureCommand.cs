@@ -1,8 +1,10 @@
-﻿using MediatR;
+﻿using Audote.Server.Domain.Entities;
+using MediatR;
+using OneOf;
 
 namespace Audote.Server.Application.Pictures.Commands
 {
-    public class UploadPictureCommand : IRequest<int>
+    public class UploadPictureCommand : IRequest<OneOf<int, Error>>
     {
         public int AnimalId { get; set; }
         public string Description { get; set; }
